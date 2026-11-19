@@ -1,0 +1,122 @@
+/* ===== 1. VARIABLES (colores y medidas; cámbialos aquí) ===== */
+:root{
+  --verde-oscuro:#1f4d36; --verde:#4f8f65; --verde-claro:#e6efdf;
+  --crema:#f6f1e4; --blanco:#fff; --texto:#26332b; --gris:#5b6b5f;
+  --radio:14px; --sombra:0 6px 24px rgba(31,77,54,.10);
+}
+/* ===== 2. BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"Nunito Sans",system-ui,sans-serif;color:var(--texto);background:var(--blanco);line-height:1.65}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;color:var(--verde-oscuro);line-height:1.2}
+h1{font-size:clamp(2rem,5vw,3.4rem)} h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:1rem} h3{font-size:1.15rem;margin-bottom:.5rem}
+a{color:inherit;text-decoration:none} ul{padding-left:1.2rem} li{margin-bottom:.35rem}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
+.container{width:min(1100px,92%);margin-inline:auto} .narrow{width:min(640px,92%)}
+.section{padding:5rem 0} .alt{background:var(--crema)}
+.intro{max-width:68ch;margin-bottom:2rem;color:var(--gris)} .sub{margin:2.5rem 0 1rem}
+
+
+
+/* ===== 3. ENCABEZADO Y MENÚ ===== */
+.header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(246,241,228,.92);backdrop-filter:blur(8px);transition:box-shadow .3s}
+.header.scrolled{box-shadow:var(--sombra)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:"Fraunces",serif;font-weight:700;color:var(--verde-oscuro);line-height:1.1}
+.brand small{display:block;font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:.75rem;color:var(--gris)}
+.menu{display:flex;gap:1.4rem}
+.menu a{font-weight:600;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:.25s}
+.menu a:hover,.menu a.active{border-color:var(--verde);color:var(--verde-oscuro)}
+.menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--verde-oscuro);cursor:pointer}
+
+
+/* ===== 4. BOTONES ===== */
+.btn{display:inline-block;border:2px solid var(--verde-oscuro);background:var(--verde-oscuro);color:var(--crema);padding:.75rem 1.5rem;border-radius:999px;font:700 1rem "Nunito Sans",sans-serif;cursor:pointer;transition:transform .25s,background .25s}
+.btn:hover{transform:translateY(-2px);background:var(--verde)}
+.btn-ghost{background:transparent;color:var(--verde-oscuro)} .btn-ghost:hover{color:var(--crema)}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.8rem}
+
+
+/* ===== 5. INICIO ===== */
+.hero{padding:9rem 0 5rem;background:linear-gradient(180deg,var(--crema),var(--blanco))}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.lead{margin-top:1.2rem;font-size:1.15rem;color:var(--gris);max-width:50ch}
+.hero-img{border-radius:28px;box-shadow:var(--sombra);animation:flota 6s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-10px)}}
+
+
+
+/* ===== 6. TARJETAS Y CAJAS ===== */
+.grid{display:grid;gap:1.5rem} .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+.box{background:var(--crema);border-left:4px solid var(--verde);padding:1.5rem;border-radius:0 var(--radio) var(--radio) 0}
+.alt .box{background:var(--blanco)}
+.card{background:var(--blanco);border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra);transition:transform .3s}
+.card:hover{transform:translateY(-5px)}
+.card .body{padding:1.3rem} .card p{color:var(--gris);font-size:.95rem}
+.thumb{height:130px;display:grid;place-items:center;font-size:3rem}
+.t1{background:#d9e6d0}.t2{background:#e8dfc6}.t3{background:#cfe0dc}.t4{background:#d6e0e8}.t5{background:#dcebd2}.t6{background:#eadfd0}
+.tag{display:inline-block;margin-bottom:.5rem;font-size:.8rem;font-weight:700;color:var(--verde-oscuro);background:var(--verde-claro);padding:.15rem .7rem;border-radius:999px}
+.card.hide{display:none}
+.card.show{animation:aparece .45s ease}
+@keyframes aparece{from{opacity:0;transform:scale(.96)}}
+.notice{background:#fff8dc;border:1px dashed #b89b2e;padding:.7rem 1rem;border-radius:10px;margin-bottom:1.5rem;font-size:.92rem}
+.empty{text-align:center;color:var(--gris);padding:2rem}
+
+
+
+
+/* ===== 7. FILTROS ===== */
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+.chip{border:1.5px solid var(--verde);background:var(--blanco);color:var(--verde-oscuro);padding:.4rem 1.1rem;border-radius:999px;font:600 .9rem "Nunito Sans",sans-serif;cursor:pointer;transition:.25s}
+.chip:hover{background:var(--verde-claro)} .chip.active{background:var(--verde-oscuro);color:var(--crema);border-color:var(--verde-oscuro)}
+/* ===== 8. GALERÍA ===== */
+
+
+.gallery img{border-radius:var(--radio);width:100%} figcaption{font-size:.85rem;color:var(--gris);margin-top:.4rem}
+/* ===== 9. FORMULARIO ===== */
+
+
+
+
+form{display:grid;gap:.4rem}
+label{font-weight:700;margin-top:.8rem;display:flex;justify-content:space-between}
+label span{font-weight:400;color:var(--gris);font-size:.85rem}
+input,select,textarea{width:100%;padding:.75rem 1rem;border:1.5px solid #c4cfc0;border-radius:10px;font:inherit;background:var(--blanco)}
+input:focus,select:focus,textarea:focus{border-color:var(--verde);outline:none;box-shadow:0 0 0 3px var(--verde-claro)}
+.invalid{border-color:#b3412f!important}
+.error{color:#b3412f;min-height:1.1em;font-size:.85rem}
+form .btn{margin-top:1rem;justify-self:start}
+.success{background:var(--verde-claro);border-radius:var(--radio);padding:2rem;text-align:center;animation:aparece .5s ease}
+.success .btn{margin-top:1rem}
+
+
+
+
+/* ===== 10. PIE DE PÁGINA Y BOTÓN SUBIR ===== */
+.footer{background:var(--verde-oscuro);color:var(--crema);padding:3.5rem 0 1.5rem}
+.footer h3{color:var(--crema)} .fgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem}
+.footer nav{display:grid;grid-template-columns:1fr 1fr;gap:.4rem} .footer nav a:hover{text-decoration:underline}
+.copy{text-align:center;margin-top:2.5rem;font-size:.85rem;opacity:.75}
+.to-top{position:fixed;right:1.2rem;bottom:1.2rem;width:46px;height:46px;border-radius:50%;border:0;background:var(--verde-oscuro);color:var(--crema);font-size:1.3rem;cursor:pointer;box-shadow:var(--sombra);z-index:40}
+/* ===== 11. ANIMACIÓN AL DESPLAZARSE ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+
+
+
+/* ===== 12. RESPONSIVO ===== */
+@media(max-width:900px){.g3{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .menu-btn{display:block}
+  .menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--crema);padding:.5rem 4%;box-shadow:var(--sombra);display:none}
+  .menu.open{display:flex} .menu a{padding:.8rem 0}
+  .g2,.g3,.fgrid{grid-template-columns:1fr} .section{padding:3.5rem 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* ===== 13. FOTOGRAFÍAS (JPG/PNG/WEBP) ===== */
+.thumb{position:relative;overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.gallery img{aspect-ratio:3/2;object-fit:cover}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noticia Ecológica Santa Marta</title>
+  <meta name="description" content="Portal escolar sobre basura y drenajes en Santa Marta, Coatzacoalcos, Veracruz.">
+  <link rel="icon" href="img/logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== ENCABEZADO Y MENÚ ===== -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand"><img src="img/logo.svg" alt="" width="36" height="36"><span>Noticia Ecológica <small>Santa Marta</small></span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav id="menu" class="menu">
+        <a href="#inicio">Inicio</a><a href="#acerca">Proyecto</a><a href="#noticias">Noticias</a>
+        <a href="#problematica">Problemática</a><a href="#soluciones">Soluciones</a><a href="#participa">Participa</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== INICIO ===== -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Una comunidad limpia empieza con decisiones pequeñas</h1>
+          <p class="lead">Información educativa sobre la basura y los drenajes en Santa Marta, Coatzacoalcos, Veracruz. Proyecto escolar.</p>
+          <div class="actions"><a class="btn" href="#noticias">Explorar noticias</a><a class="btn btn-ghost" href="#acerca">Conocer el proyecto</a></div>
+        </div>
+        <img class="hero-img" src="img/hero.jpg" onerror="this.onerror=null;this.src='img/hero.svg'" alt="Ilustración de plantas y colinas verdes">
+      </div>
+    </section>
+
+    <!-- ===== ACERCA DEL PROYECTO ===== -->
+    <section id="acerca" class="section">
+      <div class="container">
+        <h2>Acerca del proyecto</h2>
+        <p class="intro">Noticia Ecológica Santa Marta es un portal escolar que reúne información educativa para entender cómo la basura y el mal funcionamiento de los drenajes afectan a la comunidad, y qué podemos hacer al respecto.</p>
+        <div class="grid g2">
+          <article class="box"><h3>Misión</h3><p>Informar y sensibilizar a los habitantes de Santa Marta sobre el manejo responsable de los residuos y el cuidado de los drenajes.</p></article>
+          <article class="box"><h3>Visión</h3><p>Una comunidad que cuida su entorno, participa activamente y mantiene calles y drenajes limpios.</p></article>
+          <article class="box"><h3>Objetivo general</h3><p>Promover la conciencia ambiental y la participación ciudadana frente a la problemática de la basura y los drenajes.</p></article>
+          <article class="box"><h3>Objetivos específicos</h3>
+            <ul><li>Explicar las causas y consecuencias de la acumulación de basura.</li><li>Difundir prácticas de separación y reciclaje.</li><li>Proponer acciones comunitarias de mantenimiento.</li><li>Abrir un espacio para opiniones de los vecinos.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTICIAS (con filtros) =====
+         Fotos: guarda img/noticia1.jpg ... noticia6.jpg. Si no existen, se muestra el emoji. -->
+    <section id="noticias" class="section alt">
+      <div class="container">
+        <h2>Noticias ecológicas</h2>
+        <p class="notice"> pd:los artículos son textos educativos creados para este proyecto, no noticias reales ni estadísticas oficiales.</p>
+        <div class="filters" role="group" aria-label="Filtrar noticias">
+          <button class="chip active" data-filter="todas">Todas</button>
+          <button class="chip" data-filter="contaminacion">Contaminación</button>
+          <button class="chip" data-filter="basura">Basura</button>
+          <button class="chip" data-filter="drenaje">Drenajes</button>
+          <button class="chip" data-filter="consecuencias">Consecuencias</button>
+          <button class="chip" data-filter="educacion">Educación</button>
+        </div>
+        <div class="grid g3" id="newsGrid">
+          <article class="card" data-cat="contaminacion"><div class="thumb t1"><img src="img/noticia1.jpg" alt="Imagen de la noticia 1" loading="lazy" onerror="this.remove()">🌫️</div><div class="body"><span class="tag">Contaminación</span><h3>Cómo se contamina el suelo y el agua</h3><p>Los residuos mal desechados liberan sustancias que se filtran al suelo y llegan a ríos y arroyos.</p></div></article>
+          <article class="card" data-cat="basura"><div class="thumb t2"><img src="img/noticia2.jpg" alt="Imagen de la noticia 2" loading="lazy" onerror="this.remove()">🗑️</div><div class="body"><span class="tag">Basura</span><h3>Por qué se acumula la basura en las calles</h3><p>La falta de contenedores, horarios de recolección poco claros y malos hábitos generan montones de residuos.</p></div></article>
+          <article class="card" data-cat="drenaje"><div class="thumb t3"><img src="img/noticia3.jpg" alt="Imagen de la noticia 3" loading="lazy" onerror="this.remove()">🚰</div><div class="body"><span class="tag">Drenajes</span><h3>Drenajes tapados: qué los provoca</h3><p>Plásticos, envolturas y grasa reducen el paso del agua y favorecen las obstrucciones.</p></div></article>
+          <article class="card" data-cat="consecuencias"><div class="thumb t4"><img src="img/noticia4.jpg" alt="Imagen de la noticia 4" loading="lazy" onerror="this.remove()">🌧️</div><div class="body"><span class="tag">Consecuencias</span><h3>Lluvias, encharcamientos y salud</h3><p>Con un drenaje obstruido el agua se estanca, lo que puede atraer mosquitos y malos olores.</p></div></article>
+          <article class="card" data-cat="educacion"><div class="thumb t5"><img src="img/noticia5.jpg" alt="Imagen de la noticia 5" loading="lazy" onerror="this.remove()">♻️</div><div class="body"><span class="tag">Educación</span><h3>Las 3R: reducir, reutilizar, reciclar</h3><p>Una guía sencilla para disminuir la basura que generamos en casa y en la escuela.</p></div></article>
+          <article class="card" data-cat="educacion basura"><div class="thumb t6"><img src="img/noticia6.jpg" alt="Imagen de la noticia 6" loading="lazy" onerror="this.remove()">📚</div><div class="body"><span class="tag">Educación</span><h3>Cómo separar los residuos en casa</h3><p>Orgánicos, reciclables y no reciclables: una clasificación básica que cualquier familia puede aplicar.</p></div></article>
+        </div>
+        <p class="empty" id="emptyMsg" hidden>No hay noticias en esta categoría.</p>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEMÁTICA ===== -->
+    <section id="problematica" class="section">
+      <div class="container">
+        <h2>Problemática de Santa Marta</h2>
+        <p class="intro">En zonas urbanas como Santa Marta, la basura que llega a calles y drenajes puede bloquear el paso del agua, sobre todo en temporada de lluvias. <em>reemplázalo con datos y observaciones propias verificadas.</em></p>
+        <div class="grid g3">
+          <article class="box"><h3>Causas</h3><ul><li>Residuos tirados en la vía pública.</li><li>Poca separación en origen.</li><li>Mantenimiento insuficiente de drenajes.</li></ul></article>
+          <article class="box"><h3>Consecuencias</h3><ul><li>Encharcamientos e inundaciones.</li><li>Malos olores y fauna nociva.</li><li>Contaminación del suelo y del agua.</li></ul></article>
+          <article class="box"><h3>Afectaciones</h3><ul><li>Riesgos para la salud de las familias.</li><li>Daño al paisaje y a áreas verdes.</li><li>Dificultad para transitar en calles.</li></ul></article>
+        </div>
+        <h3 class="sub">Galería de la comunidad</h3>
+        <div class="grid g3 gallery">
+          <figure><img src="img/comunidad1.jpg" onerror="this.onerror=null;this.src='img/comunidad1.svg'" alt="Espacio para fotografía 1 de la comunidad"><figcaption> pruebas </figcaption></figure>
+          <figure><img src="img/comunidad2.jpg" onerror="this.onerror=null;this.src='img/comunidad2.svg'" alt="Espacio para fotografía 2 de la comunidad"><figcaption> pruebas</figcaption></figure>
+          <figure><img src="img/comunidad3.jpg" onerror="this.onerror=null;this.src='img/comunidad3.svg'" alt="Espacio para fotografía 3 de la comunidad"><figcaption> pruebas</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLUCIONES ===== -->
+    <section id="soluciones" class="section alt">
+      <div class="container">
+        <h2>Propuestas de solución</h2>
+        <div class="grid g3">
+          <article class="box"><h3>🧹 Campañas de limpieza</h3><p>Jornadas vecinales periódicas en calles, parques y escuelas.</p></article>
+          <article class="box"><h3>♻️ Separación y reciclaje</h3><p>Contenedores diferenciados y hábitos de clasificación en casa.</p></article>
+          <article class="box"><h3>🔧 Mantenimiento de drenajes</h3><p>Limpieza preventiva antes de la temporada de lluvias y reporte a las autoridades.</p></article>
+          <article class="box"><h3>🤝 Participación ciudadana</h3><p>Comités de vecinos que vigilen y propongan mejoras.</p></article>
+          <article class="box"><h3>🎓 Educación ambiental</h3><p>Talleres y pláticas en escuelas y espacios comunitarios.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PARTICIPACIÓN (formulario) ===== -->
+    <section id="participa" class="section">
+      <div class="container narrow">
+        <h2>Participación ciudadana</h2>
+        <p class="intro">Comparte una propuesta o una observación. Aquí se guarda solo como demostración, no se envía a ningún servidor.</p>
+        <form id="form" novalidate>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name">
+          <small class="error" id="e-nombre"></small>
+          <label for="tema">Tema</label>
+          <select id="tema" name="tema"><option value="">Selecciona un tema</option><option>Basura</option><option>Drenajes</option><option>Reciclaje</option><option>Educación ambiental</option><option>Otro</option></select>
+          <small class="error" id="e-tema"></small>
+          <label for="desc">Descripción <span id="count">0/500</span></label>
+          <textarea id="desc" name="desc" rows="5" maxlength="500"></textarea>
+          <small class="error" id="e-desc"></small>
+          <button class="btn" type="submit">Enviar propuesta</button>
+        </form>
+        <div class="success" id="success" hidden role="status"><h3>¡Gracias por participar!</h3><p id="successText"></p><button class="btn btn-ghost" id="again">Enviar otra</button></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== CONTACTO Y PIE DE PÁGINA ===== -->
+  <footer id="contacto" class="footer">
+    <div class="container fgrid">
+      <div><h3>Noticia Ecológica Santa Marta</h3><p>Proyecto escolar de educación ambiental.</p><p>📍 Santa Marta, Coatzacoalcos, Veracruz.</p></div>
+      <div><h3>Navegación</h3><nav><a href="#inicio">Inicio</a><a href="#acerca">Proyecto</a><a href="#noticias">Noticias</a><a href="#problematica">Problemática</a><a href="#soluciones">Soluciones</a><a href="#participa">Participa</a></nav></div>
+    </div>
+    <p class="copy">© 2026 Noticia Ecológica Santa Marta · Contenido de ejemplo con fines educativos</p>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="Volver al inicio" hidden>↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
